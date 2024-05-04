@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-          APP_NAME = "reddit-clone-pipeline"
+          APP_NAME = "reddit-clone-app"
         
     }
     stages {
@@ -32,8 +32,8 @@ pipeline {
                     git add deployment.yaml
                     git commit -m "Updated Deployment Manifest"
                 """
-                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'default')]) {
-                    sh "git push https://github.com/reysylaj/Reddit-Clone main HEAD:main"
+                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+                    sh "git push https://github.com/reysylaj/a-reddit-clone-gitops main"
                 }
             }
          }
