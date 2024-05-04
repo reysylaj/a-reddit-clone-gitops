@@ -33,7 +33,7 @@ pipeline {
                     git commit -m "Updated Deployment Manifest"
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'default')]) {
-                    sh "git push https://github.com/reysylaj/a-reddit-clone-gitops main HEAD:main"
+                    sh "git push https://github.com/reysylaj/Reddit-Clone main HEAD:main"
                 }
             }
          }
