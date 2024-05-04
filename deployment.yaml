@@ -7,14 +7,16 @@ spec:
   selector:
     matchLabels:
       app: reddit-clone-app
+      version: "1.0.0-36"  # Separate the version information here
   template:
     metadata:
       labels:
         app: reddit-clone-app
+        version: "1.0.0-36"  # Repeat the version label here
     spec:
       containers:
         - name: reddit-clone-app
-          image: reysylaj/reddit-clone-app:1.0.0-36
+          image: reysylaj/reddit-clone-app:latest
           resources:
             limits:
               cpu: "1"
